@@ -1,0 +1,38 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+.contenedorTitulo
+{
+	position: relative;
+}
+
+.contFondo
+{
+	background-color: #3A85A7;
+	width: 100%;
+	height: 316px;
+}
+
+.contFondo h1
+{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #fff;
+}
+
+.contImagen
+{
+	position: absolute !important;
+	bottom: -88px;
+	right: 0;
+}
+
+.contImagen img
+{
+	display: block;
+	margin: auto;
+}
