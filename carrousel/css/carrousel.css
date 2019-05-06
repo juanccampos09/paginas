@@ -1,0 +1,121 @@
+	body
+			{
+				width: 100%;
+				height: 100%;
+			}
+			.owl-carousel
+			{
+				width: 550px;
+				height: 100%;
+				max-height: 209px;
+			}
+			.owl-item
+			{
+				height: 270px !important;
+				background-color: #eee;
+				height: 100%;
+				transform: rotate(-90deg);
+				margin-bottom: 10px;
+				margin-right: 0px;
+			}
+			.owl-item .contTitulo
+			{
+				height: 270px;
+				width: 100%;
+				text-align: center;
+				transform: rotate(-90deg);
+				position: relative;
+				background-color: #0296ae;
+			}
+			.owl-item .contTitulo h3
+			{
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 100%;
+				text-align: center;
+				color: #fff;
+				font-weight: bold;
+			}
+			a:link
+			{
+				color: #0069d9;
+			}
+			.card
+			{
+				transform: rotate(-90deg);
+				width: 100% !important;
+				height: 100%;
+			}
+			.card .card-img-top
+			{
+				height: 200px;
+				object-fit: cover;
+				width: 100%;
+			}
+			.card .btn
+			{
+				padding: 0;
+				height: 30px;
+			}
+			.card .card-title
+			{
+				text-align: center;
+				margin-bottom: 10px;
+				margin-top: 3px;
+			}
+			.owl-carousel .owl-nav{
+			display: flex;
+			justify-content: space-between;
+			position: absolute;
+			width: 114%;
+			top: calc(50% - 52px);
+			left: -38px;
+			z-index: -1
+			}
+			div.owl-carousel .owl-nav .owl-prev, div.owl-carousel .owl-nav .owl-next{
+			font-size:71px;
+			}
+
+			.aside
+			{
+				width: 640px;
+				height: 270px;
+				padding-left: 35px;
+				display: inline-block;
+				transform: rotate(90deg);
+				transform-origin: 0% 100%; /*rotando la esquina inferior izquierda*/
+				float: left;
+				position: fixed;
+				top:-270px; /*subiendo el elemento hasta la parte superior quitandole la altura del elemento*/
+			}
+
+			.prueba
+			{
+				float: right;
+				width: calc(100% - 275px);
+				max-width: 1140px;
+			}
+
+			.contPrincipal
+			{
+
+				width: 100%;
+				max-width: 1413px;
+				display: block;
+				margin: auto;
+
+			}
+
+			@media only screen and (max-width: 887px) {
+
+				.aside
+				{
+					visibility: hidden;
+				}
+				.prueba
+				{
+					width: 100%;
+				}
+
+			}

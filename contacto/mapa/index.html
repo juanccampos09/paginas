@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="leaflet/leaflet.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+</head>
+<body>
+	
+	<div id="map"></div>
+
+
+</body>
+<script src="leaflet/leaflet.js"></script>
+<script type="text/javascript">
+
+	var mymap = L.map('map').setView([10.020122, -84.216013], 18);
+
+	var OpenStreetMap_DE = L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(mymap);
+
+	var marcadorEmpresa = new L.Marker([10.020122, -84.216013]).addTo(mymap).bindPopup("<b>SITSA</b>").openPopup();
+
+	
+
+	L.Routing.control({
+	  waypoints: [
+	    L.latLng(57.74, 11.94),
+	    L.latLng(57.6792, 11.949)
+	  ]
+	}).addTo(map);
+
+</script>
+</html>

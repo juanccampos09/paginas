@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="css/contacto.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/generalStyle.css">
+		<link rel="stylesheet" href="FontAwesome/css/all.css">
+		<link rel="stylesheet" href="mapa/leaflet/leaflet.css">
+		<link rel="stylesheet" type="text/css" href="css/leafletStyle.css">
+</head>
+<body>
+	
+	<section class="container">
+		<div class="contenedorImagenPrincipal">
+			<img src="imagenes/contacto2.jpg" alt="">
+			<div class="contEncima">
+				<h1 class="titulo">Contacto</h1>
+			</div>
+		</div>
+	</section>
+
+	<section class="container mb-3">
+		<div class="infoPersonal mb-4">
+			<h4 class="subtitulo">Cuentenos sobre usted:</h4>
+			<div class="row">
+				<div class="col-md-6">
+					Nombre Completo:
+					<br>
+					<input type="text" class="form-control">
+				</div>
+				<div class="col-md-6">
+					Nombre de la compañia (Opcional)
+					<br>
+					<input type="text" class="form-control">
+				</div>
+				<div class="col-md-6">
+					Teléfono
+					<br>
+					<input type="text" class="form-control">
+				</div>
+				<div class="col-md-6">
+					Correo
+					<br>
+					<input type="text" class="form-control">
+				</div>
+			</div>
+		</div>
+		<div class="tipoAyuda  mb-4">
+			<h4 class="subtitulo">¿Como le podemos ayudar?</h4>
+			<div class="row">
+				<div class="col-md-3 col-sm-4">
+					<input type="checkbox">
+					Soporte tecnico.
+				</div>
+				<div class="col-md-4 col-sm-5">
+					<input type="checkbox">
+					Desarrollo de software.
+				</div>
+			</div>
+		</div>
+
+		<div class="descripcionProyecto  mb-4">
+			<h4 class="subtitulo">Cuentenos sobre su proyecto:</h4> 
+			<div class="row">
+				<div class="col-md-12">
+					<textarea id="txtDescripcion" cols="30" rows="10"></textarea>
+				</div>
+			</div>
+			
+		</div>
+		<div class="contBotones">
+			<button class="btn btn-primary">Enviar</button>
+		</div>
+	</section>
+
+	<section class="container mt-5">
+		<div class="row">
+			<div class="col-sm-4">
+				<h4 class="subtitulo">Dirección:</h4>
+				<p>Corazon De Jesus, Provincia de Alajuela</p>
+			</div>
+
+			<div class="col-sm-4">
+				<h4 class="subtitulo">Teléfonos:</h4>
+				<p>8888-8888</p>
+			</div>
+
+			<div class="col-sm-4">
+				<h4 class="subtitulo">Correos:</h4>
+				<p>correo@gmail.com</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="container mt-2 mb-4">
+		<div class="row">
+			<div class="col-sm-12">
+				<div id="map"></div>
+			</div>
+		</div>
+	</section>
+
+
+	<script src="js/jquery-3.4.0.min.js"></script>
+	<script src="js/bootstrap.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script src="mapa/leaflet/leaflet.js"></script>
+	<script type="text/javascript">
+
+		var mymap = L.map('map').setView([10.020122, -84.216013], 18);
+
+		var OpenStreetMap_DE = L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
+			maxZoom: 19,
+			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+		}).addTo(mymap);
+
+		var marcadorEmpresa = new L.Marker([10.020122, -84.216013]).addTo(mymap).bindPopup("<b>SITSA</b>").openPopup();
+
+		
+
+		L.Routing.control({
+		  waypoints: [
+		    L.latLng(57.74, 11.94),
+		    L.latLng(57.6792, 11.949)
+		  ]
+		}).addTo(map);
+
+	</script>
+</body>
+</html>
