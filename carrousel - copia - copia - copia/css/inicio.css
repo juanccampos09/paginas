@@ -1,0 +1,409 @@
+
+
+/*---------------------------------------seccion 1--------------------------------------------------*/
+
+
+
+#contenedorIntroduccion
+{
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	color: #fff;
+}
+
+#contenedorIntroduccion #imagenPrincipal
+{
+	width: 100%;
+	height: 100vh;
+	object-fit: cover;
+}
+
+#FondoOscuro
+{
+	width: 100%;
+	height: 100vh;
+	background: rgba(0,0,0,0.7);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+}
+
+#FondoOscuro h1
+{
+	
+	font-size: 53px;
+	font-weight: bold;
+}
+
+/*---------------------------------------fin seccion 1--------------------------------------------------*/
+
+/*---------------------------------------seccion 2--------------------------------------------------*/
+
+#contenedorServicios
+{
+	
+	min-height: 589px;
+}
+
+#contTarjetas
+{
+	width: 95%;
+	margin: 0 auto 90px auto;
+	text-align: center;
+}
+
+.tarjeta
+{
+	width: 360px;
+	height: 270px;
+	border: 1px solid #000;
+	display: inline-block;
+	margin: 15px 15px;
+}
+
+.tarjeta .seccionSubtitulo
+{
+	width: 100%;
+	height: 125px;
+}
+
+
+.tarjeta .seccionSubtitulo .contImagen
+{
+	width: 94px;
+	height: 94px;
+	position: relative;
+	display: inline-block; /*necesario para que el contenedor de la imagen no se baje cuando se le indica un margen al rombo*/
+	float: left;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+
+.tarjeta .seccionSubtitulo .contImagen .rombo
+{
+	width: 70px;
+	height: 70px;
+	background-color: #707070;
+	transform: rotate(45deg);
+	margin: 12px auto;
+	transition: all 0.7s;
+}
+
+.tarjeta:hover .seccionSubtitulo .contImagen .rombo
+{
+	transform: rotate(136deg);
+}
+
+.tarjeta .seccionSubtitulo .contImagen img
+{
+	width: 47px;
+	height: 47px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+.tarjeta .seccionSubtitulo .subtitulo
+{
+	width: 60%;
+	display: inline;
+	float: left;
+	margin-top: 39px;
+	margin-left: 24px;
+	text-align: left;
+}
+
+.subtitulo, .subtitulo h3
+{
+	font-weight: bold;
+	color: #676767;
+}
+
+
+/*---------------------------------------fin seccion 2--------------------------------------------------*/
+
+
+/*---------------------------------------seccion 3--------------------------------------------------*/
+
+#contenedorQuienesSomos
+{
+	width: 100%;
+	height: 842px;
+	background-color: #696158;
+	position: relative;
+}
+
+#contenedorQuienesSomos #contImgQuienesSomos
+{
+	width: 80%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-left: 20px;
+}
+
+#contenedorQuienesSomos #contImgQuienesSomos img
+{
+	width: 80%;
+	height: 729px;
+}
+
+#contenedorQuienesSomos #contDescripQuienesSomos
+{
+	width: 615px;
+	height: 95%;
+	background-color: #fff;
+	margin-right: 83px;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 1;
+	box-shadow: 5px 11px 9px #242424;
+}
+
+
+
+
+/*---------------------------------------fin seccion 3--------------------------------------------------*/
+
+/*---------------------------------------seccion 4--------------------------------------------------*/
+
+	#contProductos
+	{
+		width: 100%;
+		margin: 0 auto 90px auto;
+		text-align: center; 
+	}
+
+	.producto
+	{
+		max-width: 673px;
+		height: 565px;
+		position: relative;
+		display: inline-block;
+		margin: 15px 8px;
+		overflow: hidden;
+	}
+
+	.producto img
+	{
+		width: 100%;
+		height: 100%;
+		transition: all 0.6s; /*necesario para que el efecto que realize se produzca de la misma forma pero alreves cuando se quita el mouse de encima*/
+	}
+
+	.producto .encima
+	{
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,0.0);
+		position: absolute;
+		bottom: 0;
+		color: #fff;
+		visibility: hidden;
+	}
+
+	.producto .encima .nombreProducto
+	{
+		
+		padding-bottom: 20px;
+		visibility: hidden;
+	}
+
+	.producto .encima input
+	{
+		width: 167px;
+		height: 53px;
+		margin-top: 20px;
+		background-color: rgba(0,0,0,0.0);
+		border: 2px solid #fff;
+		color: #fff;
+		font-size: 23px;
+		visibility: hidden;
+	}
+
+	.producto:hover .encima
+	{
+		animation: encimaVisible .4s ease-out;
+		animation-fill-mode: forwards;
+	}
+
+	.producto:hover .encima .nombreProducto
+	{
+		animation: subir .4s ease-out;
+		animation-delay: .1s;
+		animation-fill-mode: forwards;
+	}
+
+	.producto:hover .encima input
+	{
+		animation: bajar .4s ease-out;
+		animation-delay: .1s;
+		animation-fill-mode: forwards;
+	}
+
+	.producto:hover img
+	{
+		-webkit-transform:scale(1.1); /* Safari and Chrome */
+	    -moz-transform:scale(1.1); /* Firefox */
+	    -ms-transform:scale(1.1); /* IE 9 */
+	    -o-transform:scale(1.1); /* Opera */
+		transform:scale(1.1);
+	}
+
+
+	@-webkit-keyframes subir 
+	{
+
+		from{ padding-bottom: 10px; visibility: hidden; }
+		to{ padding-bottom: 74px; visibility: visible;  }
+
+	}
+
+	@-webkit-keyframes bajar 
+	{
+
+		from{ margin-top: 10px; visibility: hidden; }
+		to{ margin-top: 50px; visibility: visible; }
+
+	}
+
+	@-webkit-keyframes encimaVisible 
+	{
+
+		from{ visibility: hidden;  background-color: rgba(0,0,0,0.0);}
+		to{ visibility: visible; background-color: rgba(0,0,0,0.5); }
+
+	}
+
+	#contLinkProductos
+	{
+		width: 100px;
+		height: 35px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 80px;
+		
+	}
+
+	#contLinkProductos #linkMasProductos > *
+	{
+		margin-bottom: 0px;
+		color: #000;
+
+
+	}
+
+	#contLinkProductos #linkMasProductos
+	{
+
+		text-decoration: none;
+
+	}
+
+
+	#lineaVerMas
+	{
+		width: 100%;
+		height: 5px;
+		margin-top: 2px;
+		background-color: #000;
+		transition: all 0.4s;
+	}
+
+	#contLinkProductos:hover #lineaVerMas
+	{
+		width: 120%;
+	}
+
+
+/*---------------------------------------fin seccion 4--------------------------------------------------*/
+
+
+/*---------------------------------------seccion 5--------------------------------------------------*/
+
+.parallax 
+{
+
+  background-image: url("../imagenes/idea.png");
+  min-height: 600px; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#contImagenFondo
+{
+	text-align: center; /*centrando horizontalmente el contenedor de texto.
+						Se centra de esta forma para que el contenedor tenga un margen
+						minimo cuando la pantalla se hace paqueña ya que si se realiza 
+						con el translate, el contenedor siempre se queda de un tamaño
+						fijo y este disminuye aun cuando la pantalla es lo suficientemente
+						grande*/
+}
+
+
+#contTextoContacto
+{
+	max-width: 943px;
+	min-height: 300px;
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 30px;
+	color: #fff;
+	font-size: 25px;
+	margin-top: 133px; /*centrando verticalmente el contenedor */
+	margin-bottom: 133px;
+	display: inline-block; /*propiedad utilizada para que funcione el margin top*/
+	text-align: left;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#contTextoContacto p
+{
+	padding-top: 57px;
+	font-size: 36px;
+	font-weight: bold;
+}
+
+#contTextoContacto input
+{
+	width: 167px;
+	height: 54px;
+	margin-left: 30px;
+	margin-top: 22px;
+	margin-bottom: 57px;
+	border: 2px solid #fff;
+	border-radius: 24px;
+	background-color: rgba(0,0,0,0.0);
+	color: #fff;
+}
+
+/*---------------------------------------fin seccion 5--------------------------------------------------*/
+
+
+/*---------------------------------------seccion 6--------------------------------------------------*/
+
+.filaClientes
+{
+	width: 100%;
+	height: 235px;
+}
+
+.filaClientes .contImagenCliente
+{
+	width: 24.8%; /*no se coloca el 25% ya que al colocar el atributo inline-block provoca que aparezcan unos nodos en medio de cada elemento*/
+	height: 100%;
+	text-align: center;
+	display: inline-block;
+}
+
+/*---------------------------------------fin seccion 6--------------------------------------------------*/
+
